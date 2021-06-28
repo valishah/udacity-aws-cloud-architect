@@ -1,0 +1,29 @@
+
+RTO(Recovery Time Objective) represents how many hours it takes you to return to a working state after a disaster. 
+RPO, which is also expressed in hours, represents how much data you could lose when a disaster happens. For example, an RPO of 1 hour means that 
+you could lose up to 1 hour’s worth of data when a disaster occurs.
+
+
+Minimum RTO for a single AZ outage
+RTO for recovery with an RDS Single-AZ instance failure can vary from minutes to hours. The duration depends on the size of the database and the 
+failure and recovery approach required.
+The RTO timing requires starting up a new Amazon RDS instance and then applying all changes since the last backup. 
+
+
+Minimum RTO for a single region outage
+RTO for recovery in a cross-region situation should be less than 5 minutes. All you have to do is manually set the replica as the master database.
+
+
+Minimum RPO for a single AZ outage
+RPO for recovery with an RDS Single-AZ instance failure is typically 5 minutes (the interval required for copying transaction logs to Amazon S3), but it 
+can vary. You can confirm this by calling RDS:describe-db-instances:LatestRestorableTime. This service returns the latest time to which a database can be 
+restored with point-in-time restore.
+The RPO is typically 5 minutes, but you can find it by calling RDS:describe-db-instances:LatestRestorableTime. This time can vary from 10 minutes to hours, 
+depending on the number of logs that need to be applied. It can only be determined by testing because it depends on the size of the database, the number of 
+changes made since the last backup, and the workload levels on the database. The RDS backups and transaction logs are stored in Amazon S3, so this recovery 
+can occur in any supported Availability Zone in the Region.
+
+
+Minimum RPO for a single region outage
+This will depend on the replication lag. With CloudWatch is posible to monitor this important metric, and to raise an alert if it reaches a level that is 
+unacceptably high.
