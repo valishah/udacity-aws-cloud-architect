@@ -1,0 +1,18 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (Ohio),,Amazon RDS for MySQL,0,2043.28,24519.36,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (100 GB), Quantity (2), Instance type (db.m5.2xlarge), Deployment option (Multi-AZ), Pricing strategy (OnDemand)"
+My Estimate,US East (Ohio),,Amazon EC2,0,283.95,3407.40,USD,"Operating system (Linux), Quantity (2), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage amount (1000 GB), Instance type (t2.large)"
+My Estimate,US East (Ohio),,S3 Standard,0,23,276.00,USD,S3 Standard storage (1000 GB per month)
+My Estimate,US East (Ohio),,Data Transfer,0,0,0.00,USD,
+My Estimate,US East (Ohio),,Amazon EC2,0,290.52,3486.24,USD,"Operating system (Linux), Quantity (2), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage amount (1000 GB), Instance type (m4.large)"
+My Estimate,US East (Ohio),,Amazon Virtual Private Cloud (VPC),0,55.35,664.20,USD,Number of NAT Gateways (1)
+My Estimate,US East (Ohio),,Amazon Virtual Private Cloud (VPC),0,563.11,6757.32,USD,"DT Inbound: Internet (1 TB per month), DT Outbound: Internet (5 TB per month), DT Intra-Region: (5 TB per month), Data transfer cost (563.11)"
+My Estimate,US East (Ohio),,Application Load Balancer,0,1200.85,14410.20,USD,Number of Application Load Balancers (2)
+My Estimate,US East (Ohio),,Amazon ElastiCache,0,1992.9,23914.80,USD,Nodes ( 3 instances of type Memcached  Memory optimized  cache r4.2xlarge  OnDemand )
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+Modifications:
+1. Reduced RDS MySQL from db.m4.4xlarge to db.m5.2xlarge

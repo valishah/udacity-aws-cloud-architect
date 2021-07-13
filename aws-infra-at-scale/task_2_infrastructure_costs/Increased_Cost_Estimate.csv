@@ -1,0 +1,25 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (Ohio),,Amazon RDS for MySQL,0,10271.84,123262.08,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (100 GB), Quantity (2), Instance type (db.m4.10xlarge), Deployment option (Multi-AZ), Pricing strategy (OnDemand)"
+My Estimate,US East (Ohio),,Amazon EC2,0,704.56,8454.72,USD,"Operating system (Linux), Quantity (4), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage amount (1000 GB), Instance type (t3.xlarge)"
+My Estimate,US East (Ohio),,S3 Standard,0,23,276.00,USD,S3 Standard storage (1000 GB per month)
+My Estimate,US East (Ohio),,Data Transfer,0,0,0.00,USD,
+My Estimate,US East (Ohio),,Amazon EC2,0,1847.15,22165.80,USD,"Operating system (Linux), Quantity (4), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage amount (1000 GB), Instance type (m4.4xlarge)"
+My Estimate,US East (Ohio),,Amazon Virtual Private Cloud (VPC),0,55.35,664.20,USD,Number of NAT Gateways (1)
+My Estimate,US East (Ohio),,Amazon Virtual Private Cloud (VPC),0,563.11,6757.32,USD,"DT Inbound: Internet (1 TB per month), DT Outbound: Internet (5 TB per month), DT Intra-Region: (5 TB per month), Data transfer cost (563.11)"
+My Estimate,US East (Ohio),,Application Load Balancer,0,1200.85,14410.20,USD,Number of Application Load Balancers (2)
+My Estimate,US East (Ohio),,Amazon ElastiCache,0,1992.9,23914.80,USD,Nodes ( 3 instances of type Memcached  Memory optimized  cache r4.2xlarge  OnDemand )
+My Estimate,US East (Ohio),,Amazon CloudWatch,0,91.24902,1094.99,USD,"Number of Metrics (includes detailed and custom metrics) (), GetMetricData: Number of metrics requested (864000), Standard Logs: Data Ingested (2 GB), Logs Delivered to S3: Data Ingested (2 GB), Expected Logs Data scanned (20 GB), Number of Custom/Cross-account events (20), Number of Dashboards (20), Number of High Resolution Alarm Metrics (100)"
+Global,All,Business support plan,AWS Support,0,1472.5 ,17670.00,USD,"Supports 24/7 phone, chat, and email access to Cloud Support Engineers for unlimited contacts, with and a response time of less than 1 hour."
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+
+
+Modifications:
+ * Included AWS business support
+ * Included Cloudwatch
+ * Increased EC2 instances size to t3.xlarge & m4.4xlarge for better performance
+ * Increased RDS size to m4.10xlarge
