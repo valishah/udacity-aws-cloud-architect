@@ -47,70 +47,67 @@ You have been asked to plan a SERVERLESS architecture schematic for a new applic
 Export your schematic as a PDF and save as [Udacity_Diagram_2.pdf](aws-infra-at-scale/task_1_architecture_schemantics/Udacity_Diagram_2.pdf)
 
 ## Task 2: Calculate Infrastructure Costs
-Use the AWS Pricing Calculator to estimate how much it will cost to run the services in your Part 1 diagram for one month.
+1. Use the [AWS Pricing Calculator](https://calculator.aws/#/) to estimate how much it will cost to run the services in your Part 1 diagram for one month.
 
-Target a monthly estimate between $8,000-$10,000.
-Be mindful of AWS regions when you are estimating costs.
-Export the estimate as a CSV file named Initial_Cost_Estimate.csv.
-Return to the AWS Pricing Calculator and reconfigure your estimates for the following scenarios:
+    * Target a monthly estimate between $8,000-$10,000.
+    * Be mindful of AWS regions when you are estimating costs.
+    * Export the estimate as a CSV file named `Initial_Cost_Estimate.csv`
 
-Your budget has been reduced from $8,000-$10,000 to a maximum of $6,500. What services will you modify to meet this new budget? Export the updated costs in a CSV file named Reduced_Cost_Estimate.csv and write up a brief narrative of the changes you made in the CSV file below the cost estimate.
 
-Your budget has been increased to $20,000. What resources will you add and why?
-Think about where to add redundancy and how to improve performance. Re-configure your estimate to a monthly invoice of $18K-20K. Export the updated costs to a CSV file named Increased_Cost Estimate.csv and write up a brief narrative of the changes you made in the CSV file below the cost estimate.
+2. Return to the [AWS Pricing Calculator](https://calculator.aws/#/) and reconfigure your estimates for the following scenarios:
 
-[OPTIONAL] Task 3: Configure Permissions.
-Attempt this task only if you are using your personal AWS account. This task will not be graded.
+    * Your budget has been reduced from `$8,000-$10,000` to a maximum of $6,500. What services will you modify to meet this new budget? Export the updated costs in a CSV file named `Reduced_Cost_Estimate.csv` and write up a brief narrative of the changes you made in the CSV file below the cost estimate.
 
-In order to complete this task, please ensure your IAM users have been granted access to the billing dashboard (Activating Access to the Billing and Cost Management Console).
+    * Your budget has been increased to $20,000. What resources will you add and why?
+Think about where to add redundancy and how to improve performance. Re-configure your estimate to a monthly invoice of $18K-20K. Export the updated costs to a CSV file named `Increased_Cost Estimate.csv` and write up a brief narrative of the changes you made in the CSV file below the cost estimate.
 
-Update the AWS password policy.
+## [OPTIONAL] Task 3: Configure Permissions.
 
-Minimum password length = 8
-Require at least one uppercase letter
-Require at least one lowercase letter
-Require at least one number
-Require at least one non-alphanumeric character.
-Submit a screenshot of the Password Policy from the IAM Account settings page. Name the screenshot udacity_password_policy.png or udacity_password_policy.jpg.
+> Attempt this task only if you are using your personal AWS account. This task will not be graded.
 
-AWS Password Policy
-Example AWS Password Policy
+In order to complete this task, please ensure your IAM users have been [granted access to the billing dashboard](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) (Activating Access to the Billing and Cost Management Console).
 
-Create a Group named CloudTrailAdmins and give it the two CloudTrail privileges.
+1. Update the AWS password policy.
 
-Create a Group named Reviewers and give it the Billing privilege.
+    * Minimum password length = 8
+    * Require at least one uppercase letter
+    * Require at least one lowercase letter
+    * Require at least one number
+    * Require at least one non-alphanumeric character.
 
-Configure a user named CloudTrail and a user named Accountant. Give the users AWS Console access and assign them a password that conforms to your password policy. Require them to change their password when they login.
+Submit a screenshot of the Password Policy from the IAM Account settings page. Name the screenshot `udacity_password_policy.png` or `udacity_password_policy.jpg`.
 
-Assign CloudTrail to the CloudTrailAdmins group. Assign Accountant to the Reviewers group .
+2. Create a Group named CloudTrailAdmins and give it the two CloudTrail privileges.
 
-Test both user accounts by logging into the AWS console as the users CloudTrail and Accountant after changing their passwords on login. Login using your numerical AccountID
+3. Create a Group named Reviewers and give it the Billing privilege.
 
-AWS Sign In
-While logged-in as the user CloudTrail, go to the CloudTrail page and create a trail named Udacity_Trail. Enable logging on all Read/Writes Management Events and S3 and Lambda events Data Events. Create a new S3 Bucket to store the CloudTrail log. There is no need for advanced configuration.
+4. Configure a user named CloudTrail and a user named Accountant. Give the users AWS Console access and assign them a password that conforms to your password policy. Require them to change their password when they login.
 
-Download the portion of the CloudTrail log that shows the entire Task 3 timeframe and save it as UdacityCloudTrailLog.csv.
+5. Assign CloudTrail to the CloudTrailAdmins group. Assign Accountant to the Reviewers group .
 
-Before Logging off, return to the CloudTrail configuration page. Disable S3 logging.
-Are you sure you want to stop logging?
-Are you sure you want to stop logging?
+6. Test both user accounts by logging into the AWS console as the users CloudTrail and Accountant after changing their passwords on login. Login using your numerical AccountID
 
-[OPTIONAL ]Task 4: Set up Cost Monitoring
-Attempt this task only if you are using your personal AWS account. This task will not be graded.
 
-Configure CloudWatch billing alarm
+7. While logged-in as the user CloudTrail, go to the CloudTrail page and create a trail named Udacity_Trail. Enable logging on all Read/Writes Management Events and S3 and Lambda events Data Events. Create a new S3 Bucket to store the CloudTrail log. There is no need for advanced configuration.
 
-Set up a Billing alarm with a $5 threshold
+8. Download the portion of the CloudTrail log that shows the entire Task 3 timeframe and save it as UdacityCloudTrailLog.csv.
 
-Set up notification so that you get an email alert when the alarm is triggered.
+9. Before Logging off, return to the CloudTrail configuration page. Disable S3 logging.
+
+
+## å[OPTIONAL ]Task 4: Set up Cost Monitoring
+> Attempt this task only if you are using your personal AWS account. This task will not be graded.
+
+1. Configure CloudWatch billing alarm
+2. Set up a Billing alarm with a $5 threshold
+3. Set up notification so that you get an email alert when the alarm is triggered.
+
 Save a screenshot of the CloudWatch Alarms page showing the new alarm with a green OK status as CloudWatch_alarm.png or CloudWatch_alarm.jpg
 
-Example CloudWatch Alarm
-Example CloudWatch Alarm
 
-Task 5 : Use Terraform to Provision AWS Infrastructure
-Part 1
-Download the starter code.
+## Task 5 : Use Terraform to Provision AWS Infrastructure
+### Part 1
+Download the [starter code](https://github.com/udacity/cand-c2-project).
 In the main.tf file write the code to provision
 
 AWS as the cloud provider
