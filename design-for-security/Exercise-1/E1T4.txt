@@ -1,0 +1,9 @@
+# Poor practice 1
+For the VPC configuration, all of the route definitions have DestinationCidrBlock defined as 0.0.0.0/0.
+
+If an attacker was able to breach into the subnet configured within the routing table, they could have the option to tranfer information to any IP address within the VPC.
+
+# Poor practice 2
+The created IAM role have full access to s3 resources.
+
+This role should only have access to specific buckets and allow only necessary actions. Allowing full access would expose a vulnarability to change content in any S3 bucket of AWS account
